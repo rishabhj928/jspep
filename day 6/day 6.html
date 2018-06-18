@@ -1,0 +1,22 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function sub() {
+			var a = document.getElementById("t1");
+			var b = document.getElementById("t2");
+			var c = document.getElementById("t3");
+			var d = {Name:a,Age:b,City:c};
+			document.getElementById("p1").innerHTML = d;
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<input placeholder="Name" type="text" id="t1"><br>
+		<input placeholder="Age" type="text" id="t2"><br>
+		<input placeholder="City" type="text" id="t3"><br>
+		<input type="submit" value="Submit" onclick="sub()">
+	</form>
+	<p id="p1"></p>
+</body>
+</html>

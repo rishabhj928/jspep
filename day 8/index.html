@@ -1,0 +1,36 @@
+<html>
+<head>
+	<script type="text/javascript">
+		var a=[],b=[],c=[];
+		function fun1() {
+			var name=document.getElementById("n").value;
+			var roll=document.getElementById("r").value;
+			var marks=document.getElementById("m").value;
+			a.push(name);
+			b.push(roll);
+			c.push(marks);
+			alert("Data has been added");
+			document.getElementById("n").innerHTML="";
+			document.getElementById("r").innerHTML="";
+			document.getElementById("m").innerHTML="";
+		}
+		function fun2(){
+			var para = document.createElement("P");
+			for(var i=0;i<a.length;i++){
+			    para.innerHTML =' 'Name:' + a[i].toString() + '<br>Roll No: ' +b[i].toString()+ '<br>Marks: ' + c[i].toString()';
+			}
+			document.getElementById("div1").appendChild(para);
+		}
+	</script>
+</head>
+<body>
+	<form method="post" action="#">
+		Enter Name<input type="text" id="n"><br>
+		Enter Roll no<input type="text" id="r"><br>
+		Enter Total Marks<input type="text" id="m"><br>
+		<input type="submit" value="Add Data" onclick="fun1()">
+		<input type="submit" value="Display Data" onclick="fun2()"><br><br>
+	</form>
+	<div id ='div1'></div>
+</body>
+</html>
