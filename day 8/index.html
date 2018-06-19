@@ -1,36 +1,80 @@
+<!DOCTYPE html>
 <html>
-<head>
-	<script type="text/javascript">
-		var a=[],b=[],c=[];
+<script src="angular.min.js"></script>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Student Data</title>
+		<link rel="stylesheet" href="bootstrap.css">
+		<link rel="stylesheet" href="superfish.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+	<div id="fh5co-header">
+		<header id="fh5co-header-section">
+			<div class="container">
+				<div class="nav-header">
+					<a href="service.html" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+					<h1 id="fh5co-logo"><a href="#">Student Data</a></h1>
+					<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li><a href="#">Login/Signup</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>		
+	</div>
+
+	<div class="col-half col-half-2" ng-app="myApp" style="background-image: url(bg.jpg);width:100%;color: black;">
+		<form>
+			<div class="col-md-4">
+				<b><u><p style="color: black;">Enter Student Data</p></u></b><br>
+				<ul><li>
+						<p style="color: black;">Enter Name:</p>
+						<input type="text" id="n" placeholder="Name"/>
+				</li></ul>
+			</div>
+			<div class="col-md-4">
+				<br><br><br>
+				<ul><li>
+						<p style="color: black;">Enter Roll No:</p>
+						<input type="number" id="r" placeholder="Roll No"/>
+					</li><br><br>
+					<ul>
+					<b><button type="button" onclick="fun1()">Add Data</button></b>
+					</ul></ul>
+			</div>
+			<div class="col-md-4">
+				<br><br><br>
+				<ul><li>
+						<p style="color: black;">Enter Total Marks:</p>
+						<input type="number" id="m" placeholder="Marks"/>
+					</li></ul>
+			</div>
+		</form>
+	</div>
+			
+	<footer id="footer">
+		<div id ='div1'></div>
+	</footer>	
+
+	<script>
 		function fun1() {
 			var name=document.getElementById("n").value;
 			var roll=document.getElementById("r").value;
 			var marks=document.getElementById("m").value;
-			a.push(name);
-			b.push(roll);
-			c.push(marks);
-			alert("Data has been added");
-			document.getElementById("n").innerHTML="";
-			document.getElementById("r").innerHTML="";
-			document.getElementById("m").innerHTML="";
-		}
-		function fun2(){
 			var para = document.createElement("P");
-			for(var i=0;i<a.length;i++){
-			    para.innerHTML =' 'Name:' + a[i].toString() + '<br>Roll No: ' +b[i].toString()+ '<br>Marks: ' + c[i].toString()';
-			}
+			para.innerHTML = 'Name: '+ name + '<br>Roll No: ' + roll +'<br>Marks: ' + marks;
 			document.getElementById("div1").appendChild(para);
+			alert("Data Has Been Added");
+			document.getElementById("n").value="";
+			document.getElementById("r").value="";
+			document.getElementById("m").value="";
 		}
 	</script>
-</head>
-<body>
-	<form method="post" action="#">
-		Enter Name<input type="text" id="n"><br>
-		Enter Roll no<input type="text" id="r"><br>
-		Enter Total Marks<input type="text" id="m"><br>
-		<input type="submit" value="Add Data" onclick="fun1()">
-		<input type="submit" value="Display Data" onclick="fun2()"><br><br>
-	</form>
-	<div id ='div1'></div>
-</body>
+	</body>
 </html>
